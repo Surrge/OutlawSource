@@ -1,0 +1,315 @@
+html {
+	background-color: #586266;
+	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	color: #DAAE5A;
+}
+
+a:hover {
+	color: white;
+}
+
+.message {
+    margin: 0;
+    font-family: monospace;
+    color: yellow;
+}
+
+.error {
+	font-family: consolas;
+	font-size: 12px;
+	color: red;
+}
+
+.ui-dialog,
+.ui-tooltip {
+	font-size: 14px !important;
+	font-family: 'Roboto Condensed', sans-serif !important;
+}
+
+.ui-dialog,
+.ui-dialog-titalbar {
+	padding: 0;
+}
+
+.abbreviation {
+	font-size: 75%;
+	vertical-align: baseline;
+}
+
+.positive,
+.positive:hover {
+	color: #149A14;
+}
+.negative,
+.negative:hover {
+	color: #F32A2A;
+}
+
+.days {
+	color: #5ABABB;
+}	
+.hours {
+	color: #CEA43C;
+}
+
+#main {
+	background-color: #2C3133;
+    max-width: 1200px;
+    height: 100%;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* SITE MENU */
+#upper_menu
+{
+    /*width:500px;margin:0 auto;*//*Uncomment this line to make the menu center-aligned.*/
+    text-align:center;
+    background: #0E1619;
+}
+
+#upper_menu #site_banner,
+#upper_menu #user_banner {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 7px;
+    z-index: 1;
+    
+    font-size: 14px;    
+    color: #DAAE5A;    
+}
+
+#upper_menu #site_banner {
+	left: 0;
+}
+
+#upper_menu #user_banner {
+	right: 0;
+}
+
+#upper_menu .link {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 2px;
+    padding: 0 40px;
+    z-index: 99;
+    
+    line-height: 30px;
+    background: #3A5866;
+    text-decoration: none;    
+}
+
+#upper_menu a:hover, 
+#upper_menu a.currentMenuItem
+{
+    background: #659AB2;
+    color: #FFF2E6;
+}
+
+/* SIDE MENU */
+#sideMenu {
+	visibility:hidden;	/* Display in JS after scroll */
+    position: fixed;
+    left: 0;
+    top: 20px;
+    padding: 10px 10px 10px 20px;
+    margin-left: -10px;
+    
+    background-color: #554861;   
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/* Card UI */
+.card, 
+.cardButton,
+.itemCard {
+	display: inline-block;
+	min-width: 250px;
+	margin: 10px;	
+	
+	color: #DAAE5A;
+	text-align: center;
+	vertical-align: middle;	
+	font-weight: bold;
+    text-decoration: none;
+    
+	background-color: #503131;
+	border: 1px solid #503131;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2),0 2px 3px rgba(0,0,0,0.05);    
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.card:hover,
+.cardButton:hover {
+	color: white;
+	background-color: #772E2E;
+}
+.itemCard:hover {
+	background-color: #235A5A;
+}
+
+.card_menu {
+	text-align: center
+}
+.card_menu .card {	
+	padding: 35px;   
+	font-size: 25px;
+}
+
+.cardSet {
+	text-align: center;
+}
+
+.cardButton {	
+    padding: 9px 14px;
+    font-size: 14px;
+}
+
+.cardButton:hover {	
+    color: #fff;
+}
+
+.itemCard {
+    max-width: 275px;
+    padding: 5px;
+    
+    color: white;
+    font-weight: normal;
+    border: 1px black solid;
+    background: #464646; 
+    cursor: default; 
+}
+.itemCard .table {
+	display: table;
+	width: 100%;
+}
+.itemCard .topRow,
+.itemCard .bottomRow {
+	display: table-row;
+}
+.itemCard img,
+.itemCard .title,
+.itemCard .price,
+.itemCard .details {
+	display: table-cell;
+	padding: 5px;
+}
+
+.itemCard img {
+	height: 50px;
+	width: 50px;
+}
+.itemCard .title {
+	width: 100%;
+    font-size: 22px;
+    font-weight: bold;
+    vertical-align: top;
+    text-align: left;		    
+}
+.itemCard .title a {
+	text-decoration: none;
+    color: white;
+}
+.itemCard .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: yellow;
+    vertical-align: middle;
+    text-align: right;
+}
+.itemCard .details {
+    display: table;
+    width: 100%;
+    margin-top: -10px;
+}
+.itemCard .details p {
+    display: table-cell;
+    text-align: right;
+    font-size: 16px;
+    padding-right: 12px;
+}
+
+.displayTable {
+	
+}
+
+.displayTable {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid black;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2),0 2px 3px rgba(0,0,0,0.05);
+}
+.displayTable th {
+    padding: 10px;
+    background-color: #503131;
+    border: 1px solid black;
+}
+.displayTable td {
+	text-align: left;
+    line-height: 2;
+	padding: 0 10px 0 10px;
+}
+.displayTable td+td {
+	text-align: right;
+}
+.displayTable tr:nth-child(even) {
+	background-color: #41444A;
+}
+
+.displayTable .thumbnail {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 7px;
+    border: 1px solid black;
+}
+
+.displayTable .sortRow {
+	background-color: #5D6467;
+}
+.displayTable .sortRow a {
+	display: inline-block;
+	width: 100%;
+    cursor: pointer;
+}
+
+.displayTable form {
+	display: inline-block;
+}
+
+.displayTable input {
+	width: 45px;
+    margin-left: 5px;
+    color: white;
+    background: none;
+    border: 1px solid #848484;
+}
+
+.displayTable .plusButton {
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 1px;
+    color: #DAAE5A;
+    background-color: #503131;
+    border: 1px solid black;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.displayTable .plusButton:hover {
+	color: white;
+	background-color: #772E2E;
+}	
