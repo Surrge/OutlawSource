@@ -25,18 +25,71 @@
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 		
 		<jsp:invoke fragment="head"/>
+		
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("sidebar-toggle").addEventListener('click', toggleMobileSidebar());
+				document.getElementById("main").addEventListener('click', closeMobileSidebar());
+				document.getElementById("mobile-sidebar").style.display = "none";
+			}
+			function toggleMobileSidebar() {	
+				var mobileSidebar = document.getElementById("mobile-sidebar");
+				if(mobileSidebar.style.display == "none") {
+					mobileSidebar.style.display = "";
+				}
+				else {
+					mobileSidebar.style.display = "none";
+				}
+			}
+			function closeMobileSidebar() {
+				var mobileSidebar = document.getElementById("mobile-sidebar");
+				mobileSidebar.style.display = "none";
+			}
+		</script>
 	</head>
   <body>
-    <div id="upper_menu">
-    	<p id="site_banner">Welcome to OutlawSource</p>
-	    <a href="<c:url value="/Resources/Hub"/>" class="link">Hub</a>
-	    <a href="<c:url value="/Resources/Summary"/>" class="link">Summary</a>
-	    <a href="<c:url value="/Resources/Chart"/>" class="link">Chart</a>
-	    <a href="<c:url value="/Resources/Alert"/>" class="link">Alerts</a>
-	    <a href="<c:url value="/Resources/Stats"/>" class="link">Stats</a>
+    <div id="menu">
+    	<div class="non-mobile">
+    		<a class="menu-link" href="<c:url value="/About"/>">About</a>
+    		<div class="menu-dropdown">
+    			<a class="menu-link" href="<c:url value="/Resources/Hub"/>">Resources</a>
+    			<div class="dropdown-content">
+    				<a class="menu-link" href="<c:url value="/Resources/Summary"/>">Summary</a>
+    				<a class="menu-link" href="<c:url value="/Resources/Chart"/>">Chart</a>
+    				<a class="menu-link" href="<c:url value="/Resources/Alert"/>">Alerts</a>
+    				<a class="menu-link" href="<c:url value="/Resources/Stats"/>">Stats</a>
+    				
+    			</div>
+    		</div>
+    	</div>
+    	
+    	<div class="mobile">
+    		<div id="sidebar-toggle" onclick="toggleMobileSidebar()">Menu</div>
+    	</div>
+    	
 	    <c:if test="${!empty user}">
-	    	<p id="user_banner">Logged in as ${user.userId} | <a href="<c:url value='/Logout'/>">Logout</a></p>
+	    	<span>Logged in as ${user.userId} | <a href="<c:url value='/Logout'/>">Logout</a></span>
 	    </c:if>
+	    <span class="site-title"><a href="<c:url value="/"/>">OutlawSource</a></span>
+	</div>
+	
+	<div id="mobile-sidebar" class="mobile">
+		<p>Resources<p>
+		<ul>
+			<li><a class="menu-link" href="<c:url value="/Resources/Summary"/>">Summary</a></li>
+			<li><a class="menu-link" href="<c:url value="/Resources/Chart"/>">Chart</a></li>
+			<li><a class="menu-link" href="<c:url value="/Resources/Alert"/>">Alerts</a></li>
+			<li><a class="menu-link" href="<c:url value="/Resources/Stats"/>">Stats</a></li>
+		</ul>
+	</div> 
+	
+	<div id="banner">
+		<c:if test="${!empty messages}">
+    		<c:forEach var="message" items="${messages}">
+    			<p class="message">${message}</p>
+    		</c:forEach>
+    		<br />
+    	</c:if>
 	</div>
 	
     <div id="main">	
@@ -44,16 +97,13 @@
     	
     	<br />
     	
-    	<c:if test="${!empty messages}">
-    		<c:forEach var="message" items="${messages}">
-    			<p class="message">${message}</p>
-    		</c:forEach>
-    		<br />
-    	</c:if>
-    	
     	<div id="serverDialog" title="Server Messages"></div>
     	
     	<jsp:doBody/>
     </div>
+    
+    <span id="footer">
+		v1.1
+	</span>
   </body>
 </html>

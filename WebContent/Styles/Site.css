@@ -60,74 +60,143 @@ a:hover {
 	color: #CEA43C;
 }
 
+/* MENU */
+#menu
+{
+	display: table;
+	width: 100%;
+	text-align: left;
+	background: #0E1619;
+	z-index:99;
+}
+
+	#menu span {
+		display: table-cell;
+		width: 1px;
+		white-space: nowrap;
+	}
+	
+	#menu .menu-link {
+		display: inline-block;
+		padding: 0 15px;
+		margin: 0 2px;					
+		line-height: 30px;
+		background: #3A5866;
+		text-decoration: none;    
+	}
+
+		#menu .menu-link:hover, 
+		#menu .menu-link.currentMenuItem
+		{
+			background: #659AB2;
+			color: #FFF2E6;
+			font-weight: bold;
+		}
+	
+	#menu .menu-dropdown {
+		display: inline-block;
+		padding: 0 15px;
+		margin: 0 2px;					
+		line-height: 30px;
+		background: #3A5866;
+		text-decoration: none;  
+	}
+		#menu .menu-dropdown .dropdown-content {
+			display: none;
+		}
+		#menu .menu-dropdown .menu-link {
+			display: block;
+		}
+		
+		#menu .menu-dropdown:hover {
+			position: absolute;
+		}
+			#menu .menu-dropdown:hover .dropdown-content {
+				display: block;
+			}
+			
+	#menu .site-title * {
+		padding: 15px;
+		
+		font-size: 20px;    
+		color: #3f97b6 !important;
+		text-decoration: none;
+	}
+
+/* PAGE */
+#banner,
+#main,
+#footer {
+	display: block;
+	max-width: 1200px;
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#banner {
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-bottom: 1px solid darkgray;
+	text-align: center;
+}
+
 #main {
-	background-color: #2C3133;
-    max-width: 1200px;
-    height: 100%;
-    padding: 20px;
-    margin-left: auto;
-    margin-right: auto;
+	background-color: #2C3133;				
+	height: 100%;
+	padding: 20px;
 }
 
-/* SITE MENU */
-#upper_menu
-{
-    /*width:500px;margin:0 auto;*//*Uncomment this line to make the menu center-aligned.*/
-    text-align:center;
-    background: #0E1619;
+#footer {
+	text-align: center;
+	border-top: 1px solid darkgray;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
-#upper_menu #site_banner,
-#upper_menu #user_banner {
-    position: absolute;
-    top: 0;
-    margin: 0;
-    padding: 7px;
-    z-index: 1;
-    
-    font-size: 14px;    
-    color: #DAAE5A;    
+/* MOBILE */
+@media (max-width: 768px) {
+	.non-mobile {
+		display: none;
+	}
+}
+@media (min-width: 769px) {
+	.mobile {
+		display: none;
+	}
 }
 
-#upper_menu #site_banner {
+#sidebar-toggle {
+	padding-left: 1.25em;
+	padding-right: 1.25em;
+	position: relative;
+	cursor: pointer;
+}
+#sidebar-toggle:before {
+	content: "";
+	position: absolute;
 	left: 0;
+	top: 0.21em;
+	bottom: 0.21em;
+	width: 1em;
+	background: linear-gradient(
+		to bottom, 
+		white, white 20%, 
+		black 20%, black 40%, 
+		white 40%, white 60%, 
+		black 60%, black 80%, 
+		white 80%, white 100%
+	);
 }
-
-#upper_menu #user_banner {
-	right: 0;
-}
-
-#upper_menu .link {
-    display: inline-block;
-    position: relative;
-    margin-bottom: 2px;
-    padding: 0 40px;
-    z-index: 99;
-    
-    line-height: 30px;
-    background: #3A5866;
-    text-decoration: none;    
-}
-
-#upper_menu a:hover, 
-#upper_menu a.currentMenuItem
-{
-    background: #659AB2;
-    color: #FFF2E6;
-}
-
-/* SIDE MENU */
-#sideMenu {
-	visibility:hidden;	/* Display in JS after scroll */
-    position: fixed;
-    left: 0;
-    top: 20px;
-    padding: 10px 10px 10px 20px;
-    margin-left: -10px;
-    
-    background-color: #554861;   
-    border: 1px solid black;
-    border-radius: 5px;
+#mobile-sidebar {
+	float: left;
+	background-color: #424242;
+	height: 100%;
+	padding: 10px;
+	position: fixed;
+	z-index: 99;
 }
 
 /* Card UI */
