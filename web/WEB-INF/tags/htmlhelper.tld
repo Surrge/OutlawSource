@@ -8,23 +8,23 @@
         version="2.1">
   <tlib-version>1.0</tlib-version>
   <short-name>OutlawSource-HtmlHelper</short-name>
-  <uri>http://www.outlawsource.net/htmlhelper</uri>
+  <uri>http://www.outlawsource.net/web/htmlhelper</uri>
 
   <function>
       <name>FormatCurrency</name>
-      <function-class>com.outlawsource.HtmlHelper</function-class>
+      <function-class>net.outlawsource.web.HtmlHelper</function-class>
       <function-signature>java.lang.String FormatCurrency(java.lang.String)</function-signature>
   </function>  
   
   <function>
       <name>FormatPercent</name>
-      <function-class>com.outlawsource.HtmlHelper</function-class>
+      <function-class>net.outlawsource.web.HtmlHelper</function-class>
       <function-signature>java.lang.String FormatPercent(java.lang.String, java.lang.String)</function-signature>
   </function>
   
    <function>
       <name>FormatPayoffTime</name>
-      <function-class>com.outlawsource.HtmlHelper</function-class>
+      <function-class>net.outlawsource.web.HtmlHelper</function-class>
       <function-signature>java.lang.String FormatPayoffTime(java.lang.Integer)</function-signature>
   </function>
 

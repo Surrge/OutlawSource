@@ -1,7 +1,7 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@taglib prefix="hh" uri="http://www.outlawsource.net/htmlhelper" %>
+<%@taglib prefix="hh" uri="http://www.outlawsource.net/web/htmlhelper" %>
 
 <t:genericpage>
 	<jsp:attribute name="title">Market Summary</jsp:attribute>
