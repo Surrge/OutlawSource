@@ -51,7 +51,9 @@ public class DatabaseManager {
 	public static Connection getConnection() throws SQLException {
 		DriverManager.registerDriver(new com.mysql.jdbc.Driver ());
 		//System.out.println("Attempting JDBC Connection: " + (username != null ? username : "<no user>") + "@" + url);
-		return DriverManager.getConnection(url, username, password);
+		Connection conn = DriverManager.getConnection(url, username, password);
+		conn.setCatalog("osdb");
+		return conn;
 	}
 	
 	public static String testConnection() {
