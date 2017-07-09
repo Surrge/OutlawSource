@@ -16,7 +16,7 @@ public class HubServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			super.doGet(request, response);
-			request.getRequestDispatcher("/Hub.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pages/Hub.jsp").forward(request, response);
 		}
 		catch(Exception ex) {
 			throw new RuntimeException(ex);
@@ -26,7 +26,7 @@ public class HubServlet extends BaseServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			super.doPost(request, response);
-			request.getRequestDispatcher("/Hub.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pages/Hub.jsp").forward(request, response);
 		}
 		catch(Exception ex) {
 			throw new RuntimeException(ex);

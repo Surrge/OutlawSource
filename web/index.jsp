@@ -6,5 +6,6 @@
 	
 	<jsp:body>
 		<p>You are being redirected to the <a href="<c:url value='/Resources/Hub'/>">Resources Hub</a>
+		<c:redirect url="/Resources/Hub" />
 	</jsp:body>
 </t:genericpage>

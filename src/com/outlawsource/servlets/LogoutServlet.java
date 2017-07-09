@@ -25,6 +25,6 @@ public class LogoutServlet extends BaseServlet {
     	   
     	messages.add("You have been logged out successfully");
     	request.setAttribute("messages", messages);
-    	request.getRequestDispatcher("/Hub").forward(request,response);
+    	request.getRequestDispatcher("/WEB-INF/pages/Hub.jsp").forward(request,response);
     }
 }

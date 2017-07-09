@@ -80,11 +80,11 @@ public class SummaryServlet extends BaseServlet {
 			throw new RuntimeException(ex);
 		}
 		
-		request.getRequestDispatcher("/Summary.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/Summary.jsp").forward(request, response);
     }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/Summary.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/pages/Summary.jsp").forward(request, response);
 	}
 	
 	private String ConvertDateToMySQLFormat(Date input, int dayOffset) {

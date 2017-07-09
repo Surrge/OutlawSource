@@ -18,7 +18,7 @@ public class StatsServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
 			super.doGet(request, response);
-			request.getRequestDispatcher("/Stats.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pages/Stats.jsp").forward(request, response);
 		}
 		catch(Exception ex) {
 			throw new RuntimeException(ex);
@@ -44,7 +44,7 @@ public class StatsServlet extends BaseServlet {
 			
 			request.setAttribute("messages", messages);
 			request.setAttribute("factories", FactoryDAO.getUserFactories(user.getUserId()));
-			request.getRequestDispatcher("/Stats.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pages/Stats.jsp").forward(request, response);
 		}
 		catch(Exception ex) {
 			throw new RuntimeException(ex);

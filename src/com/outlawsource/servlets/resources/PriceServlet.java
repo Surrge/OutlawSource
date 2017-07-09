@@ -31,7 +31,7 @@ public class PriceServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	try {
 			super.doGet(request, response);
-			request.getRequestDispatcher("/Chart.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/pages/Chart.jsp").forward(request, response);
 		}
 		catch(Exception ex) {
 			throw new RuntimeException(ex);
