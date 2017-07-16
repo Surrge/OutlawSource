@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="web/WEB-INF/lib/json-20160810.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=OutlawSource&amp;ivyXmlPath=ivy.xml&amp;confs=*"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

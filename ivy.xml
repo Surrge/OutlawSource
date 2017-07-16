@@ -1,0 +1,9 @@
+<ivy-module version="2.0">
+    <info organisation="outlawsource.net" module="OutlawSource"/>
+    <dependencies>
+        <dependency org="org.springframework" name="spring-beans" rev="4.3.9.RELEASE"/>
+        <dependency org="org.springframework" name="spring-context" rev="4.3.9.RELEASE"/>
+        <dependency org="org.springframework" name="spring-core" rev="4.3.9.RELEASE"/>
+        <dependency org="org.springframework" name="spring-expression" rev="4.3.9.RELEASE"/>
+    </dependencies>
+</ivy-module>
