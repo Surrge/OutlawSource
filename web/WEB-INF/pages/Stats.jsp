@@ -1,6 +1,6 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="hh" uri="http://www.outlawsource.net/htmlhelper" %>
+<%@taglib prefix="hh" uri="http://www.outlawsource.net/web/htmlhelper" %>
 
 <t:genericpage>
 	<jsp:attribute name="title">Game Stats</jsp:attribute>
