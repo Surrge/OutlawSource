@@ -54,6 +54,8 @@ public class MessageFilter implements Filter {
 			request.setAttribute("cachedMessages", messages);
 			userMessages.remove(userId);
 		}
+		
+		chain.doFilter(request, response);
 	}
 
 	@Override

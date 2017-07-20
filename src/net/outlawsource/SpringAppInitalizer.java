@@ -10,6 +10,8 @@ import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
+import net.outlawsource.web.filters.MessageFilter;
+
 public class SpringAppInitalizer implements WebApplicationInitializer {
 	
 	public static Logger log = LogManager.getLogger();
@@ -27,6 +29,6 @@ public class SpringAppInitalizer implements WebApplicationInitializer {
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
 
-		//servletContext.addFilter("messageFilter", MessageFilter.class).addMappingForUrlPatterns(null, false, "/*");
+		servletContext.addFilter("messageFilter", MessageFilter.class).addMappingForUrlPatterns(null, false, "/*");
 	}
 }
