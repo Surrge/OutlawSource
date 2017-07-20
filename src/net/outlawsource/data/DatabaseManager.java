@@ -30,7 +30,7 @@ public class DatabaseManager {
 		try {			
 			Document configXml = readConfig(cxt);
 
-	        url = "jdbc:mysql://" + configXml.getElementsByTagName("path").item(0).getTextContent();
+	        url = "jdbc:mysql://" + configXml.getElementsByTagName("path").item(0).getTextContent() + "?useLegacyDatetimeCode=false&serverTimezone=UTC";
 	        username = configXml.getElementsByTagName("username").item(0).getTextContent();
 	        password = configXml.getElementsByTagName("password").item(0).getTextContent();
 		}
