@@ -28,7 +28,8 @@ public class PriceDAO {
 		Connection conn;
 		
 		try {
-			Statement stmt = dataManager.getConnection().createStatement();
+			conn = dataManager.getConnection();
+			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
 			if(rs.next()) {
@@ -70,7 +71,7 @@ public class PriceDAO {
 	}
 	
 	public Map<String, List<ItemSummary>> getSummary() throws Exception {
-		Map<String, List<ItemSummary>> results = new HashMap();
+		Map<String, List<ItemSummary>> results = new HashMap<String, List<ItemSummary>>();
 		results.put("Resource", new ArrayList<ItemSummary>());
 		results.put("Product", new ArrayList<ItemSummary>());
 		results.put("Loot", new ArrayList<ItemSummary>());

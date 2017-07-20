@@ -6,7 +6,6 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
-import javax.sql.DataSource;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -14,15 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-
 @Component
 public class DatabaseManager {
 	static String url = "jdbc:mysql://";
 	static String username = "";
 	static String password = "";
-	
-	static MysqlDataSource dataSource;
 	
 	@Autowired
 	public DatabaseManager(ServletContext cxt) throws SQLException {
@@ -38,11 +33,6 @@ public class DatabaseManager {
 	        url = "jdbc:mysql://" + configXml.getElementsByTagName("path").item(0).getTextContent();
 	        username = configXml.getElementsByTagName("username").item(0).getTextContent();
 	        password = configXml.getElementsByTagName("password").item(0).getTextContent();
-	        
-	        dataSource = new MysqlDataSource();
-	        dataSource.setServerName(url);
-	        dataSource.setUser(username);
-	        dataSource.setPassword(password);
 		}
 		catch(Exception ex) {
 			throw new SQLException("Unable to set JDBC Config");
@@ -68,10 +58,6 @@ public class DatabaseManager {
 		Connection conn = DriverManager.getConnection(url, username, password);
 		conn.setCatalog("osdb");
 		return conn;
-	}
-	
-	public DataSource getDataSource() throws SQLException {
-		return dataSource;
 	}
 	
 	public String testConnection() {

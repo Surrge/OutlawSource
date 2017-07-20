@@ -10,10 +10,5 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=OutlawSource&amp;ivyXmlPath=ivy.xml&amp;confs=*"/>
-	<classpathentry kind="lib" path="lib/local/commons-lang3-3.6-javadoc.jar"/>
-	<classpathentry kind="lib" path="lib/local/commons-lang3-3.6.jar"/>
-	<classpathentry kind="lib" path="lib/local/json-20160810.jar"/>
-	<classpathentry kind="lib" path="lib/local/jstl-1.2.jar"/>
-	<classpathentry kind="lib" path="lib/local/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

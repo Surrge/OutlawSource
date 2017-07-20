@@ -2,6 +2,8 @@
     <info organisation="outlawsource.net" module="OutlawSource"/>
     <dependencies>
     	<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.8.2" />
+    	<dependency org="mysql" name="mysql-connector-java" rev="6.0.6"/>
+    	<dependency org="javax.servlet" name="jstl" rev="1.2"/>
     	
     	<dependency org="org.springframework" name="spring-beans" rev="4.3.9.RELEASE"/>
         <dependency org="org.springframework" name="spring-context" rev="4.3.9.RELEASE"/>

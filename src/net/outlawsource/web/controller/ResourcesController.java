@@ -262,7 +262,6 @@ public class ResourcesController {
 			
 			List<ItemProperty> recycleItems = new ArrayList<ItemProperty>();
 			for(ItemConversion conversion : conversions) {
-				String conversionItem = conversion.getItemName();
 				recycleCalculation += " + " + conversion.getConversionRatio() + "(" + conversion.getItemName() + ")";
 				recycleItems.add(priceDao.getItemPrices(conversion.getItemName(), getHistorical));
 			}
