@@ -6,8 +6,8 @@
 	<jsp:attribute name="title">Game Stats</jsp:attribute>
 	
 	<jsp:attribute name="head">
-		<script src="<c:url value='/Scripts/FactoryTables.js'/>"></script>
-		<script src="<c:url value='/Scripts/MineTables.js'/>"></script>
+		<script src="<c:url value='/res/Scripts/FactoryTables.js'/>"></script>
+		<script src="<c:url value='/res/Scripts/MineTables.js'/>"></script>
 		
 		<style>
 			#mineTable .longInput {

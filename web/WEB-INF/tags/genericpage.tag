@@ -8,19 +8,19 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<link rel="shortcut icon" href="<c:url value='/favicon.ico'/>" />
+		<link rel="shortcut icon" href="<c:url value='/res/favicon.ico'/>" />
 		<title>OutlawSource - <jsp:invoke fragment="title"/></title>
 			
-		<script src="<c:url value='/Scripts/jquery-1.12.0.js'/>"></script>		
-		<script src="<c:url value='/Scripts/jquery-ui/jquery-ui.js'/>"></script>
-		<link rel="stylesheet" href="<c:url value='/Scripts/jquery-ui/jquery-ui.css'/>" />		
-		<script src="<c:url value='/Scripts/js.cookie.js'/>"></script>
+		<script src="<c:url value='/res/Scripts/jquery-1.12.0.js'/>"></script>		
+		<script src="<c:url value='/res/Scripts/jquery-ui/jquery-ui.js'/>"></script>
+		<link rel="stylesheet" href="<c:url value='/res/Scripts/jquery-ui/jquery-ui.css'/>" />		
+		<script src="<c:url value='/res/Scripts/js.cookie.js'/>"></script>
 		
 		<script type="text/javascript">
 			window.baseSiteUrl = '${pageContext.request.contextPath}';
 		</script>
-		<script src="<c:url value='/Scripts/Global.js'/>"></script>		
-		<link rel="stylesheet" href="<c:url value='/Styles/Site.css'/>" />		
+		<script src="<c:url value='/res/Scripts/Global.js'/>"></script>		
+		<link rel="stylesheet" href="<c:url value='/res/Styles/Site.css'/>" />		
 		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
 		

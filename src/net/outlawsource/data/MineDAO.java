@@ -7,11 +7,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import net.outlawsource.business.domain.Item;
 import net.outlawsource.business.domain.Mine;
 
+@Repository
 public class MineDAO {
-	public static Mine getUserMine(String userId, String resourceName) throws Exception {
+	
+	@Autowired
+	DatabaseManager dataManager;
+	
+	public Mine getUserMine(String userId, String resourceName) throws Exception {
 		Mine mine = null;
 		String sql = "SELECT ref_minestats.name AS mineName,"
 				+ "	item.name AS resourceName, "
@@ -30,7 +38,7 @@ public class MineDAO {
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -47,7 +55,7 @@ public class MineDAO {
 		return mine;
 	}
 	
-	public static List<Mine> getUserMines(String userId) throws Exception {
+	public List<Mine> getUserMines(String userId) throws Exception {
 		List<Mine> mines = new ArrayList<Mine>();
 		String sql = "SELECT ref_minestats.name AS mineName,"
 				+ "	item.name AS resourceName, "
@@ -66,7 +74,7 @@ public class MineDAO {
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -83,14 +91,14 @@ public class MineDAO {
 		return mines;
 	}
 	
-	public static void updateUserMine(String userId, String resourceName, Integer quantity, Integer hourlyYield) throws Exception {
+	public void updateUserMine(String userId, String resourceName, Integer quantity, Integer hourlyYield) throws Exception {
 		String getSql = "SELECT * FROM user_mines "
 				+ "WHERE user_id = '"+userId+"' "
 				+ "AND mine_resourceUID = (SELECT itemUID FROM item WHERE machineName = '"+resourceName+"' LIMIT 1) ";
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(getSql);
 			
@@ -130,7 +138,7 @@ public class MineDAO {
 		}
 	}
 	
-	public static Mine populateMine(ResultSet rs) throws SQLException {
+	public Mine populateMine(ResultSet rs) throws SQLException {
 		Mine mine = new Mine();
 		
 		mine.setDisplayName(rs.getString("mineName"));

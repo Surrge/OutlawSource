@@ -5,11 +5,11 @@
 	<jsp:attribute name="title">Price Chart</jsp:attribute>
 	
 	<jsp:attribute name="head">
-      <script src="<c:url value="/Scripts/highcharts.js"/>"></script>
-	  <script src="<c:url value="/Scripts/data.js"/>"></script>
+      <script src="<c:url value="/res/Scripts/highcharts.js"/>"></script>
+	  <script src="<c:url value="/res/Scripts/data.js"/>"></script>
 	  <!-- <script src="Content/exporting.js"></script> -->
-	  <script src="<c:url value="/Scripts/highcharts_dark.js"/>"></script>
-      <script src="<c:url value="/Scripts/PriceChart.js"/>"></script>
+	  <script src="<c:url value="/res/Scripts/highcharts_dark.js"/>"></script>
+      <script src="<c:url value="/res/Scripts/PriceChart.js"/>"></script>
     </jsp:attribute>
 
 	<jsp:body>

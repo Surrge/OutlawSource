@@ -12,7 +12,7 @@
 					getLatestPriceUrl: '<c:url value="/Resources/GetLatestPrice"/>'
 			};
 		</script>
-      <script src="<c:url value="/Scripts/Summary.js"/>"></script>
+      <script src="<c:url value="/res/Scripts/Summary.js"/>"></script>
     </jsp:attribute>
 
 	<jsp:body>

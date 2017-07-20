@@ -1,9 +1,18 @@
 <ivy-module version="2.0">
     <info organisation="outlawsource.net" module="OutlawSource"/>
     <dependencies>
-        <dependency org="org.springframework" name="spring-beans" rev="4.3.9.RELEASE"/>
+    	<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.8.2" />
+    	
+    	<dependency org="org.springframework" name="spring-beans" rev="4.3.9.RELEASE"/>
         <dependency org="org.springframework" name="spring-context" rev="4.3.9.RELEASE"/>
         <dependency org="org.springframework" name="spring-core" rev="4.3.9.RELEASE"/>
+        
         <dependency org="org.springframework" name="spring-expression" rev="4.3.9.RELEASE"/>
+        <dependency org="org.springframework.security" name="spring-security-web" rev="4.2.3.RELEASE"/>
+        <dependency org="org.springframework.security" name="spring-security-core" rev="4.2.3.RELEASE"/>
+		<dependency org="org.springframework.security" name="spring-security-config" rev="4.2.3.RELEASE"/>
+        <dependency org="org.springframework" name="spring-webmvc" rev="4.3.9.RELEASE"/>
+        <dependency org="org.springframework" name="spring-web" rev="4.3.9.RELEASE"/>
+        
     </dependencies>
 </ivy-module>

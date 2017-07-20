@@ -6,16 +6,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import net.outlawsource.business.domain.User;
 
+@Repository
 public class UserDAO {
-	public static void addUser(String userId, String password, String role) throws SQLException {
+	
+	@Autowired
+	DatabaseManager dataManager;
+	
+	public void addUser(String userId, String password, String role) throws SQLException {
 		String userSql = "INSERT INTO user VALUES(?, ?)";
 		String roleSql = "INSERT INTO user_role VALUES(?, ?)";
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			PreparedStatement userStmt = connection.prepareStatement(userSql);
 			userStmt.setString(1, userId);
 			userStmt.setString(2, password);
@@ -33,7 +41,7 @@ public class UserDAO {
 		}
 	}
 	
-	public static User getUser(String userId) throws SQLException {
+	public User getUser(String userId) throws SQLException {
 		User user = null;
 		String sql = "SELECT * FROM user "
 				+ "JOIN user_role ON user.user_id = user_role.user_id "
@@ -41,7 +49,7 @@ public class UserDAO {
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -57,7 +65,7 @@ public class UserDAO {
 		}
 	}
 	
-	private static User populateUser(ResultSet rs) throws SQLException {
+	private User populateUser(ResultSet rs) throws SQLException {
 		User user = new User();
 		user.setUserId(rs.getString("user_id"));
 		user.setRole(rs.getString("role"));

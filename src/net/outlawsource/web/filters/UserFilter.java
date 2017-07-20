@@ -11,13 +11,17 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import net.outlawsource.business.domain.User;
 import net.outlawsource.data.UserDAO;
 
+@Component
 public class UserFilter implements Filter {
-	public void  init(FilterConfig config) throws ServletException{
-		
-	}
+	
+	@Autowired
+	UserDAO userDao;
 	
 	public void  doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws java.io.IOException, ServletException {
 		String userId = ((HttpServletRequest) request).getRemoteUser();
@@ -27,7 +31,7 @@ public class UserFilter implements Filter {
 		}
 		else {
 			try {
-				User user = UserDAO.getUser(userId);
+				User user = userDao.getUser(userId);
 				if(user == null) {
 					throw new RuntimeException("Unknown User");
 				}
@@ -38,16 +42,22 @@ public class UserFilter implements Filter {
 					session.setAttribute("user", user);	
 				}						
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}			
 		}
 		
 		chain.doFilter(request,response);
 	}
+
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
 		
-	public void destroy( ){
-		/* Called before the Filter instance is removed 
-		from service by the web container*/
+	}
+
+	@Override
+	public void init(FilterConfig arg0) throws ServletException {
+		// TODO Auto-generated method stub
+		
 	}
 }

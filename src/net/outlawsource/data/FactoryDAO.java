@@ -7,11 +7,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import net.outlawsource.business.domain.Factory;
 import net.outlawsource.business.domain.Item;
 
+@Repository
 public class FactoryDAO {
-	public static Factory getUserFactory(String userId, String productName) throws Exception {
+	
+	@Autowired
+	DatabaseManager dataManager;
+	
+	public Factory getUserFactory(String userId, String productName) throws Exception {
 		Factory factory = null;
 		
 		String sql = "SELECT ref_factorylevel.name AS factoryName,"
@@ -39,7 +47,7 @@ public class FactoryDAO {
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -56,7 +64,7 @@ public class FactoryDAO {
 		return factory;
 	}
 	
-	public static List<Factory> getUserFactories(String userId) throws Exception {
+	public List<Factory> getUserFactories(String userId) throws Exception {
 		List<Factory> factories = new ArrayList<Factory>();
 		String sql = "SELECT ref_factorylevel.name AS factoryName,"
 				+ "	item.name AS productName, "
@@ -83,7 +91,7 @@ public class FactoryDAO {
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 			
@@ -100,14 +108,14 @@ public class FactoryDAO {
 		return factories;
 	}
 	
-	public static void updateFactoryLevel(String userId, String productName, int level) throws Exception {
+	public void updateFactoryLevel(String userId, String productName, int level) throws Exception {
 		String getSql = "SELECT * FROM user_factories "
 				+ "WHERE user_id = '"+userId+"' "
 				+ "AND factory_productUID = (SELECT itemUID FROM item WHERE machineName = '"+productName+"' LIMIT 1) ";
 		
 		Connection connection = null;
 		try {
-			connection = DatabaseManager.getConnection();
+			connection = dataManager.getConnection();
 			Statement stmt = connection.createStatement();
 			ResultSet rs = stmt.executeQuery(getSql);
 			
@@ -138,7 +146,7 @@ public class FactoryDAO {
 		}
 	}
 	
-	public static Factory populateFactory(ResultSet rs) throws SQLException {
+	public Factory populateFactory(ResultSet rs) throws SQLException {
 		Factory fac = new Factory();
 		fac.setDisplayName(rs.getString("factoryName"));
 		int level = rs.getInt("factory_level");
