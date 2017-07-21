@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import net.outlawsource.SpringAppInitalizer;
 import net.outlawsource.data.UserDAO;
 import net.outlawsource.web.filters.MessageFilter;
 
@@ -21,8 +20,6 @@ public class RootController {
 	
 	@RequestMapping("")
 	public String index() {
-		SpringAppInitalizer.log.debug("root controller, default route");
-		
 		return "index";
 	}
 	

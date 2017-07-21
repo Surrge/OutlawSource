@@ -15,12 +15,12 @@ import org.w3c.dom.Document;
 
 @Component
 public class DatabaseManager {
-	static String url = "jdbc:mysql://";
+	static String url = "";
 	static String username = "";
 	static String password = "";
 	
 	@Autowired
-	public DatabaseManager(ServletContext cxt) throws SQLException {
+	public DatabaseManager(ServletContext cxt) throws Exception {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} catch (Exception e) {
@@ -35,7 +35,7 @@ public class DatabaseManager {
 	        password = configXml.getElementsByTagName("password").item(0).getTextContent();
 		}
 		catch(Exception ex) {
-			throw new SQLException("Unable to set JDBC Config");
+			throw ex;
 		}
 	}
 	
@@ -70,5 +70,5 @@ public class DatabaseManager {
 		}
 		
 		return result;
-	}	
+	}
 }

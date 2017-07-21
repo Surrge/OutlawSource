@@ -11,8 +11,9 @@ import org.springframework.web.context.support.AnnotationConfigWebApplicationCon
 import org.springframework.web.servlet.DispatcherServlet;
 
 import net.outlawsource.web.filters.MessageFilter;
+import net.outlawsource.web.filters.TrackingFilter;
 
-public class SpringAppInitalizer implements WebApplicationInitializer {
+public class SpringApp implements WebApplicationInitializer {
 	
 	public static Logger log = LogManager.getLogger();
 
@@ -30,5 +31,6 @@ public class SpringAppInitalizer implements WebApplicationInitializer {
 		dispatcher.addMapping("/");
 
 		servletContext.addFilter("messageFilter", MessageFilter.class).addMappingForUrlPatterns(null, false, "/*");
+		servletContext.addFilter("trackingFilter", TrackingFilter.class).addMappingForUrlPatterns(null, false, "/*");
 	}
 }

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 <ivy-module version="2.0">
     <info organisation="outlawsource.net" module="OutlawSource"/>
     <dependencies>
@@ -9,6 +11,7 @@
     	<dependency org="org.apache.commons" name="commons-lang3" rev="3.6"/>
     	<dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.8.2" />
     	<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.8.2" />
+    	<dependency org="org.apache.logging.log4j" name="log4j-web" rev="2.8.2" />
     	
     	<dependency org="org.springframework" name="spring-aop" rev="4.3.9.RELEASE"/>
     	<dependency org="org.springframework" name="spring-beans" rev="4.3.9.RELEASE"/>
