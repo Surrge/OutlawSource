@@ -3,7 +3,7 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@taglib prefix="hh" uri="http://www.outlawsource.net/web/htmlhelper" %>
 
-<t:genericpage>
+<t:masterPage>
 	<jsp:attribute name="title">Market Summary</jsp:attribute>
 	
 	<jsp:attribute name="head">
@@ -145,4 +145,4 @@
 				<p class="priceUpdateText"></p>
 			</div>
     </jsp:body>
-</t:genericpage>
+</t:masterPage>

@@ -1,14 +1,14 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<t:genericpage>
+<t:masterPage>
 	<jsp:attribute name="title">Price Chart</jsp:attribute>
 	
 	<jsp:attribute name="head">
-      <script src="<c:url value="/res/Scripts/highcharts.js"/>"></script>
-	  <script src="<c:url value="/res/Scripts/data.js"/>"></script>
+      <script src="<c:url value="/res/Scripts/highcharts/highcharts.js"/>"></script>
+	  <script src="<c:url value="/res/Scripts/highcharts/data.js"/>"></script>
 	  <!-- <script src="Content/exporting.js"></script> -->
-	  <script src="<c:url value="/res/Scripts/highcharts_dark.js"/>"></script>
+	  <script src="<c:url value="/res/Scripts/highcharts/highcharts_dark.js"/>"></script>
       <script src="<c:url value="/res/Scripts/PriceChart.js"/>"></script>
     </jsp:attribute>
 
@@ -33,4 +33,4 @@
 		
 		<div id="priceChart"></div>
     </jsp:body>
-</t:genericpage>
+</t:masterPage>

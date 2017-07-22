@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<t:genericpage>
+<t:masterPage>
 	<jsp:attribute name="title">Resources Hub</jsp:attribute>
 	
 	<jsp:attribute name="head">
@@ -76,4 +76,4 @@
 	      	}
       	</script>
     </jsp:body>
-</t:genericpage>
+</t:masterPage>
