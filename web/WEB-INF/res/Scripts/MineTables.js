@@ -1,7 +1,9 @@
 function GetUserMines(table) {	
 	//TODO: freeze table
 	
-	$.ajax(window.baseSiteUrl + '/Resources/Stats/UserMines')
+	ga('send', 'event', 'auto', 'GetUserMines');
+	
+	$.ajax(window.baseSiteUrl + '/Resources/GetUserMines')
 	.done(function(data, status, xhr) {
 		table.data('mines', data.mines);
 		table.data('totals', data.totals);
@@ -28,8 +30,10 @@ function SetUserMine(e) {
 	
 	//TODO: freeze table
 	
+	ga('send', 'event', 'auto', 'SetUserMines');
+	
 	$.ajax({
-		url: window.baseSiteUrl + '/Resources/Stats/UserMines',
+		url: window.baseSiteUrl + '/Resources/SetUserMines',
 		type: 'POST',
 		data: formData
 	})

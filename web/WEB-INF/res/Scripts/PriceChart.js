@@ -165,6 +165,8 @@ $(function() {
 function getPrice() {
 	$("#priceChart").highcharts().showLoading();
 
+	ga('send', 'event', 'auto', 'GetChartPrices');
+	
 	$.ajax({
 		url : "Chart",
 		type : "POST",

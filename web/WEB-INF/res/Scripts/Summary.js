@@ -4,6 +4,8 @@ $(window).load(function() {
 });
 
 function GetLatestPriceDate() {
+	ga('send', 'event', 'auto', 'GetLatestPrices');
+	
 	$.ajax({
 		url : window.globalRoutes.getLatestPriceUrl,
 		type : "GET",

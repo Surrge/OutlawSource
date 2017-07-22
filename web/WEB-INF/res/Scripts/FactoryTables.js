@@ -1,7 +1,8 @@
 function GetUserFactories(table) {	
 	//TODO: freeze table
+	ga('send', 'event', 'auto', 'GetUserFactories');
 	
-	$.ajax(window.baseSiteUrl + '/Resources/Stats/UserFactories')
+	$.ajax(window.baseSiteUrl + '/Resources/GetUserFactories')
 	.done(function(data, status, xhr) {
 		table.data('factories', data.factories);
 		table.data('totals', data.totals);
@@ -27,9 +28,10 @@ function SetUserFactory(e) {
 	var table = $(this).closest('table');
 	
 	//TODO: freeze table
+	ga('send', 'event', 'auto', 'SetUserFactories');
 	
 	$.ajax({
-		url: window.baseSiteUrl + '/Resources/Stats/UserFactories',
+		url: window.baseSiteUrl + '/Resources/SetUserFactories',
 		type: 'POST',
 		data: formData
 	})
